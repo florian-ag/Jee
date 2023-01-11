@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
 	public Integer save(User c) {
 		dao.beginTransaction();
 		User cust = dao.save(c);
-
 		dao.commit(true);
 		return cust.getUserId();
 	}

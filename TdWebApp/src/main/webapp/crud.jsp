@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; UTF-8"
+	pageEncoding="UTF-8"%>
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <DOCTYPE html>
 <html>
 <head>
@@ -15,14 +21,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="employee">Liste des employés</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="ajoutclient.jsp">Ajouter un employÃ©</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ajoutclient.jsp">Ajouter un client</a>
-                </li>
-                <li class="nav-item">
-                    ${user.firstName } ${user.lastName }<a class="nav-link" href="logout">Deconnexion</a>
+                    ${user.firstName } ${user.lastName } ${user.getRoleName() }<a class="nav-link" href="logout">Deconnexion</a>
                 </li>
             </ul>
         </div>
@@ -32,20 +35,34 @@
   			<thead>
     			<tr>
      			 <th scope="col">#</th>
+     			 <th scope="col">EmpId</th>
      			 <th scope="col">FirstName</th>
      			 <th scope="col">LastName</th>
      			 <th scope="col">StartDate</th>
      			 <th scope="col">Title</th>
-     			 <th scope="col">DeptId</th>
    				 </tr>
  			 </thead>
   			<tbody>
-    			<tr>
-      				<th scope="row">1</th>
-    			</tr>
-   		
-  </tbody>
-</table>
+  				<c:forEach items="${employee}" var="emp">
+  					<c:choose>
+  						<c:when test="${emp.empId>0}">
+  							<tr class="rowoverhead">
+  								<td> ${emp.empId } </td>
+  								<td> ${emp.firstName } </td>
+  								<td> ${emp.lastName } </td>
+  								<td> ${emp.startDate } </td>
+  								<td> ${emp.title } </td>
+  								
+  							</tr>
+  						</c:when>
+  					
+  					
+  					</c:choose>
+  				
+  				</c:forEach>
+  			
+  			</tbody>
+  					</table>
     
 	
 </body>

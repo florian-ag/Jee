@@ -1,8 +1,14 @@
+<%@ page language="java" contentType="text/html; UTF-8"
+	pageEncoding="UTF-8"%>
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Ajouterun client</title>
+<title>Add employee</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
@@ -10,32 +16,28 @@
 	
 	<div class="container">
 		
-		<h2>Ajouter un client</h2>
-		<form>
+		<h2>Add employee</h2>
+		<form action="employeeadd" method="post">
 			
 			<div class="form-group">
-				<label for="userId">Email</label> 
-				<input type="text"	class="form-control" name="email" id="email" placeholder="Identifiant">
-			</div>
-			<div class="form-group">
-				<label for="password">Password</label> 
-				<input type="text"	class="form-control" name="password" id="password" placeholder="Mot de passe">
-			</div>
-			<div class="form-group">
 				<label for="userId">Firstname</label> 
-				<input type="text"	class="form-control" name="firstname" id="firstname" placeholder="Identifiant">
+				<input type="text"	class="form-control" name="firstname" id="firstname" placeholder="Firstname">
 			</div>
 			<div class="form-group">
 				<label for="userId">Lastname</label> 
-				<input type="text"	class="form-control" name="lastname" id="lastname" placeholder="Identifiant">
+				<input type="text"	class="form-control" name="lastname" id="lastname" placeholder="Lastname">
 			</div>
 			<div class="form-group">
-				<label for="userId">Date création</label> 
-				<input type="text"	class="form-control" name="date" id="date" placeholder="Identifiant">
+				<label for="userId">Start Date</label> 
+				<input type="text"	class="form-control" name="startdate" id="startdate" placeholder="Creation date">
+			</div>
+			<div class="form-group">
+				<label for="userId">Title</label> 
+				<input type="text"	class="form-control" name="title" id="title" placeholder="Title">
 			</div>
 			
 			
-			<button type="submit" class="btn btn-primary">Valider</button>
+			<button type="submit" class="btn btn-primary">Validate</button>
 		</form>
 
 

@@ -19,15 +19,27 @@ public class User {
 	private String firstName;
 	private String lastName;
 	private Date date;
+	private String roleName;
 
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(Integer userId, String email, String password, String firstName, String lastName, Date date) {
+	
+
+	public User(Integer userId, String email, String password, String firstName, String lastName, Date date,
+			String roleName) {
+		super();
+		this.userId = userId;
 		this.email = email;
 		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.date = date;
+		this.roleName = roleName;
 	}
+
+
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -85,11 +97,26 @@ public class User {
 		this.date = date;
 	}
 
+
+	@Column(name = "rolename")
+	public String getRoleName() {
+		return roleName;
+	}
+
+	
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", email=" + email + ", password=" + password + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", date=" + date + "]";
+				+ ", lastName=" + lastName + ", date=" + date + ", roleName=" + roleName + "]";
 	}
+
+	
 	
 	
 	

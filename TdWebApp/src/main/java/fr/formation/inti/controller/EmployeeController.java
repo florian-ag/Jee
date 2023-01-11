@@ -10,19 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fr.formation.inti.entity.Employee;
+import fr.formation.service.EmployeeService;
+import fr.formation.service.EmployeeServiceImpl;
+
 /**
  * Servlet implementation class EmployeeController
  */
 @WebServlet("/employee")
 public class EmployeeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private EmployeeService employeeservice;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public EmployeeController() {
-        super();
-        // TODO Auto-generated constructor stub
+    	this.employeeservice = new EmployeeServiceImpl();
     }
 
 	/**
@@ -39,8 +44,8 @@ public class EmployeeController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-//		List<Employee> employees = 
+		List<Employee> employee = employeeservice.findAll(); 
+		request.setAttribute("employee", employee);
 		request.getServletContext().getRequestDispatcher("/crud.jsp").forward(request, response);
 	}
 
