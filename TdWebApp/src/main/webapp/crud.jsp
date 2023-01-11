@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="employee.jsp">Liste des employés</a>
+                    <a class="nav-link" href="employee">Liste des employés</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="ajoutclient.jsp">Ajouter un client</a>
