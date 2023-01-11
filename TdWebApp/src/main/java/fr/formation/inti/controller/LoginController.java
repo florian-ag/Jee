@@ -1,8 +1,6 @@
 package fr.formation.inti.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,19 +47,16 @@ public class LoginController extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-		PrintWriter out = response.getWriter();
+	
 		String email =  request.getParameter("email");
 		String password =request.getParameter("password");
 		User user = userservice.findByEmail(email, password);
 		if(user!= null) {
-			
-			
-			out.print("<br> <span> Hello </span> : "+ email);
-			
-				
+			HttpSession session = request.getSession();
+			session.setAttribute("user", user);
+			request.getServletContext().getRequestDispatcher("/employee").forward(request, response);				
 		} else {
-			response.sendRedirect("/login");
+			response.sendRedirect(request.getContextPath()+"/login");
 		}	
 		
 	}

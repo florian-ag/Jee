@@ -76,7 +76,7 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	@Column(name = "datecrea", nullable = false)
+	@Column(name = "date", nullable = false)
 	public Date getDate() {
 		return date;
 	}

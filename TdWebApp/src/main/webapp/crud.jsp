@@ -22,7 +22,7 @@
                     <a class="nav-link" href="ajoutclient.jsp">Ajouter un client</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="customer.html">Deconnexion</a>
+                    ${user.firstName } ${user.lastName }<a class="nav-link" href="logout">Deconnexion</a>
                 </li>
             </ul>
         </div>
