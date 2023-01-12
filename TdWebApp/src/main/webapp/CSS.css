@@ -1,0 +1,38 @@
+@charset "ISO-8859-1";
+
+.container {
+	margin-top: 2rem;
+	margin-left: 5rem;
+	margin-left: 5rem;
+	text-align: center;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: rgba(255, 255, 255);
+}
+
+.navbar-light .navbar-brand {
+	color: rgba(255, 255, 255);
+}
+
+.navbar-brand {
+	border: 10px;
+	display: inline-block;
+	padding-top: 0.3125rem;
+	padding-bottom: 0.3125rem;
+	margin-right: 1rem;
+	margin-left: 1rem;
+	font-size: 1.25rem;
+	line-height: inherit;
+	white-space: nowrap;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color: rgba(246, 255, 0);
+}
+
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+  color: rgba(246, 255, 0)
+}
+
+}
