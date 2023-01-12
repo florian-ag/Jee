@@ -37,9 +37,10 @@ public class EmployeeController extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
-			session.invalidate();
+			doPost(request, response);
+			
+		}else {
 			response.sendRedirect(request.getContextPath());
-			return;
 		}
 	}
 
