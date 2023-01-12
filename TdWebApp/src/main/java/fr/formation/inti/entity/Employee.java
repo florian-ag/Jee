@@ -55,6 +55,15 @@ public class Employee implements java.io.Serializable {
 		this.lastName = lastName;
 		this.startDate = startDate;
 	}
+	
+
+	public Employee(String firstName, String lastName, Date startDate2, String title) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.startDate = startDate2;
+		this.title = title;
+	}
 
 	public Employee(Department department, Employee employee, Date endDate, String firstName, String lastName,
 			Date startDate, String title, Integer assignedBranchId, Set<Employee> employees) {

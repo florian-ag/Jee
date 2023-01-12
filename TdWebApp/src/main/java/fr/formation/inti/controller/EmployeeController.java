@@ -21,31 +21,37 @@ import fr.formation.service.EmployeeServiceImpl;
 public class EmployeeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private EmployeeService employeeservice;
-	
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EmployeeController() {
-    	this.employeeservice = new EmployeeServiceImpl();
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-		if(session != null)
-			session.invalidate();
-		response.sendRedirect(request.getContextPath());
+	public EmployeeController() {
+		this.employeeservice = new EmployeeServiceImpl();
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Employee> employee = employeeservice.findAll(); 
-		request.setAttribute("employee", employee);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			session.invalidate();
+			response.sendRedirect(request.getContextPath());
+			return;
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		List<Employee> list = employeeservice.findAll();
+		request.setAttribute("employee", list);
 		request.getServletContext().getRequestDispatcher("/crud.jsp").forward(request, response);
 	}
 
