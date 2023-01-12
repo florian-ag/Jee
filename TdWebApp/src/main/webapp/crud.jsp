@@ -1,10 +1,6 @@
-<%@ page language="java" contentType="text/html; UTF-8"
-	pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; UTF-8"	pageEncoding="UTF-8" session="false"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
 
 <DOCTYPE html>
 <html>
@@ -13,7 +9,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-<link href="Csspopup.css" rel="stylesheet" />
+
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -34,7 +30,7 @@
 		</div>
 	</nav>
 
-	<table class="table table-striped">
+	<table class="table table-striped" class="table table-striped table-hover">
 		<thead>
 			<tr>
 				<th scope="col">EmpId</th>
@@ -54,16 +50,14 @@
 					<td>${emp.lastName }</td>
 					<td>${emp.startDate }</td>
 					<td>${emp.title }</td>
-					<td><button class="btn btn-primary">Edit</button></td>
-					<td>
-						 <a href="delete?id=${emp.empId}"
+					<td><a class="btn btn-primary" href="update?id=${emp.empId}">Edit</a></td>
+					<td><a href="delete?id=${emp.empId}"
 						onclick="return confirm('Are you sure you want to delete this item?');">
 							<button class="btn btn-primary" type="submit" name="id"
 								value="${emp.empId}">
 								Delete <i class="bi bi-x-square-fill"></i>
 							</button>
-							</a>
-					</td>
+					</a></td>
 
 
 
