@@ -32,9 +32,11 @@
 			<div class="form-group">
 				<label for="userId">Title</label> 
 				<input type="text"	class="form-control" name="title" id="title" placeholder="Title" value="${emp.title}">
+				<input type="hidden" name="id" value="${emp.empId}">
 			</div>
 			
 			<button type="submit" class="btn btn-primary">Update</button>
+			
 		</form>
 
 

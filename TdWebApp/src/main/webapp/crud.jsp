@@ -41,64 +41,70 @@
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" href="ajoutclient.jsp">Add
 						employee</a></li>
-				<li class="nav-item">${user.firstName}${user.lastName}
-					${user.getRoleName()}<a class="nav-link" href="logout">Logout</a>
-				</li>
+
 
 			</ul>
 		</div>
-
+		<div class="nav navbar-nav navbar-right">
+			<ul>
+				<li class="nav-item nav-link pull-right">${user.firstName}${user.lastName}
+				</li>
+				<li class="nav-item">${user.firstName}${user.lastName}
+					${user.getRoleName()}<a class="nav-link pull-right" href="logout">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
 
 	<div class="container">
-		<div class="row d-flex justify-content-center">
-			<div class="col">
+		<div class="card-body py-5 px-md-5">
+			<div class="card mx-4 mx-md-5 shadow-5-strong">
+				<div class="row d-flex justify-content-center">
+					<div class="col">
 
-				<table data-pagination="true" data-search="true" data-toggle="table"
-					data-page-list="[5, 10, 25, 50, 100, all]"
-					class="table table table-striped table-hover">
-					<thead>
-						<tr>
-							<th scope="col">EmpId</th>
-							<th scope="col">FirstName</th>
-							<th scope="col">LastName</th>
-							<th scope="col">StartDate</th>
-							<th scope="col">Title</th>
-							<th scope="col">Action</th>
+						<table data-pagination="true" data-search="true"
+							data-toggle="table" data-page-list="[5, 10, 25, 50, 100, all]"
+							class="table table table-striped table-hover">
+							<thead>
+								<tr>
+									<th scope="col">EmpId</th>
+									<th scope="col">FirstName</th>
+									<th scope="col">LastName</th>
+									<th scope="col">StartDate</th>
+									<th scope="col">Title</th>
+									<th scope="col">Action</th>
 
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach items="${employee}" var="emp">
-							<tr>
-								<td>${emp.empId }</td>
-								<td>${emp.firstName }</td>
-								<td>${emp.lastName }</td>
-								<td>${emp.startDate }</td>
-								<td>${emp.title }</td>
-								<td style="text-align: center"><a class="btn btn-primary"
-									href="update?id=${emp.empId}">Edit</a> <a
-									href="delete?id=${emp.empId}"
-									onclick="return confirm('Are you sure you want to delete this item?');">
-										<button class="btn btn-primary" type="submit" name="id"
-											value="${emp.empId}">
-											Delete <i class="bi bi-x-square-fill"></i>
-										</button>
-								</a></td>
+								</tr>
+							</thead>
+							<tbody>
+								<c:forEach items="${employee}" var="emp">
+									<tr>
+										<td>${emp.empId }</td>
+										<td>${emp.firstName }</td>
+										<td>${emp.lastName }</td>
+										<td>${emp.startDate }</td>
+										<td>${emp.title }</td>
+										<td style="text-align: center"><a class="btn btn-primary"
+											href="update?id=${emp.empId}">Edit</a> <a
+											href="delete?id=${emp.empId}"
+											onclick="return confirm('Are you sure you want to delete this item?');">
+												<button class="btn btn-primary" type="submit" name="id"
+													value="${emp.empId}">
+													Delete <i class="bi bi-x-square-fill"></i>
+												</button>
+										</a></td>
 
 
 
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
-
-
-
-
 
 </body>
 </html>

@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.metamodel.SetAttribute;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,6 +50,9 @@ public class EmployeeUpdate extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String empId = request.getParameter("id");
+		Integer id = Integer.parseInt(empId);
+		
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		String startDate = request.getParameter("startdate");
@@ -59,6 +63,7 @@ public class EmployeeUpdate extends HttpServlet {
 		try {
 			date = (Date) formatDate.parse(startDate);
 			Employee employee = new Employee(firstname, lastname, date, title);
+			employee.setEmpId(id);
 			employeeservice.save(employee);
 			request.getServletContext().getRequestDispatcher("/employee").forward(request, response);
 		} catch (ParseException e) {
