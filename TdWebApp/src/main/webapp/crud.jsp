@@ -4,6 +4,8 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+
+
 <DOCTYPE html>
 <html>
 <head>
@@ -11,6 +13,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<link href="Csspopup.css" rel="stylesheet" />
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -51,13 +54,36 @@
 					<td>${emp.lastName }</td>
 					<td>${emp.startDate }</td>
 					<td>${emp.title }</td>
-					<td><button type="submit" class="btn btn-primary">Delete</button></td>
-					<td><button type="submit" class="btn btn-primary">Supprimer</button></td>
+					<td><button class="btn btn-primary">Edit</button></td>
+					<td>
+					<div class="box">
+							<a href="#popup2" class="btn btn-outline-primary"> Delete<i
+								class="bi bi-x-square-fill"></i></a>
+						</div>
+						<div id="popup2" class="overlay">
+							<div class="popup">
+								<h2>Corfirm ?</h2>
+
+								<form action="delete" method="get">
+									<button type="submit" class="btn btn-outline-primary" name="id"
+										value="${emp.empId}">Delete</button>
+								</form>
+								<a href="#"><button type="submit"
+										class="btn btn-outline-primary">Cancel</button></a>
+							</div>
+
+						</div>
+					</td>
+					
+					
 
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	
+	
 
 
 </body>
