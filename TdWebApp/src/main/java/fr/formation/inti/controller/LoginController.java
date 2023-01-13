@@ -13,7 +13,6 @@ import fr.formation.inti.entity.User;
 import fr.formation.service.UserService;
 import fr.formation.service.UserServiceImpl;
 
-
 /**
  * Servlet implementation class LoginController
  */
@@ -33,32 +32,35 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		if(session == null) {
+		if (session == null) {
 			response.sendRedirect(request.getContextPath());
 
 		} else {
-			request.getServletContext().getRequestDispatcher("/employee").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/WEB-INF/view/crudaccueil.jsp").forward(request, response);
 		}
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		String email =  request.getParameter("email");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		User user = userservice.findByEmail(email, password);
-		if(user!= null) {
+		if (user != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
-			request.getServletContext().getRequestDispatcher("/employee").forward(request, response);				
+			request.getServletContext().getRequestDispatcher("/WEB-INF/view/crudaccueil.jsp").forward(request, response);
 		} else {
-			response.sendRedirect(request.getContextPath()+"/login");
-		}	
-		
+			response.sendRedirect(request.getContextPath() + "/login");
+		}
+
 	}
 
 }

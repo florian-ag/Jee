@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; UTF-8"
 	pageEncoding="UTF-8" session="false"%>
+
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,18 +49,24 @@
 					<form action="login" method="post">
 
 						<div class="form-group">
-							<label for="userId">Identifiant</label> <input type="text"
-								class="form-control" name="email" id="email"
+							<div align="left">
+								<label for="userId">Identifiant</label>
+							</div>
+							<input type="text" class="form-control" name="email" id="email"
 								placeholder="Identifiant" required>
 						</div>
 						<div class="form-group">
-							<label for="password">Mot de passe</label> <input type="password"
-								class="form-control" name="password" id="password"
-								placeholder="Mot de passe" required>
+							<div align="left">
+								<label for="password">Mot de passe</label>
+							</div>
+							<input type="password" class="form-control" name="password"
+								id="password" placeholder="Mot de passe" required>
+						</div>
+						<div align="left">
+							<button type="submit" class="btn btn-primary">Se
+								connecter</button>
 						</div>
 
-						<button type="submit" class="btn btn-primary">Se
-							connecter</button>
 					</form>
 				</div>
 			</div>

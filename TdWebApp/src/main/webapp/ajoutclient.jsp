@@ -31,22 +31,11 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-		<a class="navbar-brand" href="#">WEBAPP</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarNav" aria-controls="navbarNav"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
-		<div class="nav navbar-nav navbar-right">
-			<ul>
-				<%-- <li class="nav-item nav-link pull-right">${user.firstName}${user.lastName}
-				</li> --%>
-				<li class="nav-item"><a class="nav-link pull-right"
-					href="logout">Logout</a></li>
-			</ul>
-		</div>
+		<a class="navbar-brand" href="login">WEBAPP</a> 
+		<a class="navbar-brand" href="employee">List of employees</a> 
+		<a class="navbar-brand" href="logout">Logout</a>
 	</nav>
+	
 	<br>
 	<br>
 

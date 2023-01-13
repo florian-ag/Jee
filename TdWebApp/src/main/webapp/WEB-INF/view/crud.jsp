@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; UTF-8"
-	pageEncoding="UTF-8" session="false"%>
+	pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -30,41 +30,39 @@
 
 </head>
 <body>
+
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-		<a class="navbar-brand" href="#">WEBAPP</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarNav" aria-controls="navbarNav"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		
-		<div class="nav navbar-nav navbar-right">
-			<ul>
-				<%-- <li class="nav-item nav-link pull-right">${user.firstName}${user.lastName}
-				</li> --%>
-				<li class="nav-item"><a class="nav-link pull-right" href="logout">Logout</a>
-				</li>
-			</ul>
-		</div>
+		<a class="navbar-brand" href="login">WEBAPP</a> 
+		<a class="navbar-brand" href="employee">List of employees</a> 
+		<a class="navbar-brand" href="logout">Logout</a>
 	</nav>
 
-	<h5>Bonjour ${user.firstName} ${user.lastName}
-		${user.getRoleName()}</h5>
-
 	<div class="container">
-		<div class="card-body py-5 px-md-5">
+
+		<div class="card-header mx-4 mx-md-5">
+			<div class="row d-flex justify-content-center">
+				<div style="background-color:LightGray; padding-bottom: 10px">
+
+					<h2>List of employees</h2>
+					<br>
+					<a class="btn btn-primary" href="ajoutclient.jsp">Add employee</a>
+					<br>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="card-body py-4">
 			<div class="card mx-4 mx-md-5 shadow-5-strong">
 				<div class="row d-flex justify-content-center">
 					<div class="col">
-						<h2 justify-align: center>Liste des employés</h2>
-						
-						<a class="btn btn-primary" href="ajoutclient.jsp">Add employee</a>
 
 						<table data-pagination="true" data-search="true"
 							data-toggle="table" data-page-list="[5, 10, 25, 50, 100, all]"
-							class="table table table-striped table-hover">
-							
-							
+							class="table table-striped table-hover">
+
+
 							<thead>
 								<tr>
 									<th>EmpId</th>
@@ -93,9 +91,6 @@
 													Delete <i class="bi bi-x-square-fill"></i>
 												</button>
 										</a></td>
-
-
-
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -105,6 +100,5 @@
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>
