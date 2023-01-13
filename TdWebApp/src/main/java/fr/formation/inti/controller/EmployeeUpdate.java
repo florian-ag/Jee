@@ -45,7 +45,7 @@ public class EmployeeUpdate extends HttpServlet {
 		if (session != null && id != null) {
 			Employee employee = employeeservice.findById(id);
 			request.setAttribute("emp", employee);
-			request.getServletContext().getRequestDispatcher("/Update.jsp").forward(request, response);
+			request.getServletContext().getRequestDispatcher("/WEB-INF/view/Update.jsp").forward(request, response);
 		} else {
 			response.sendRedirect(request.getContextPath());
 		}

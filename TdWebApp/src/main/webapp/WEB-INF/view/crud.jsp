@@ -37,20 +37,12 @@
 			aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" href="ajoutclient.jsp">Add
-						employee</a></li>
-
-
-			</ul>
-		</div>
+		
 		<div class="nav navbar-nav navbar-right">
 			<ul>
-				<li class="nav-item nav-link pull-right">${user.firstName}${user.lastName}
-				</li>
-				<li class="nav-item">${user.firstName}${user.lastName}
-					${user.getRoleName()}<a class="nav-link pull-right" href="logout">Logout</a>
+				<%-- <li class="nav-item nav-link pull-right">${user.firstName}${user.lastName}
+				</li> --%>
+				<li class="nav-item"><a class="nav-link pull-right" href="logout">Logout</a>
 				</li>
 			</ul>
 		</div>
@@ -64,18 +56,23 @@
 			<div class="card mx-4 mx-md-5 shadow-5-strong">
 				<div class="row d-flex justify-content-center">
 					<div class="col">
+						<h2 justify-align: center>Liste des employés</h2>
+						
+						<a class="btn btn-primary" href="ajoutclient.jsp">Add employee</a>
 
 						<table data-pagination="true" data-search="true"
 							data-toggle="table" data-page-list="[5, 10, 25, 50, 100, all]"
 							class="table table table-striped table-hover">
+							
+							
 							<thead>
 								<tr>
-									<th scope="col">EmpId</th>
-									<th scope="col">FirstName</th>
-									<th scope="col">LastName</th>
-									<th scope="col">StartDate</th>
-									<th scope="col">Title</th>
-									<th scope="col">Action</th>
+									<th>EmpId</th>
+									<th>FirstName</th>
+									<th>LastName</th>
+									<th>StartDate</th>
+									<th>Title</th>
+									<th>Action</th>
 
 								</tr>
 							</thead>
@@ -87,7 +84,7 @@
 										<td>${emp.lastName }</td>
 										<td>${emp.startDate }</td>
 										<td>${emp.title }</td>
-										<td style="text-align: center"><a class="btn btn-primary"
+										<td><a class="btn btn-primary"
 											href="update?id=${emp.empId}">Edit</a> <a
 											href="delete?id=${emp.empId}"
 											onclick="return confirm('Are you sure you want to delete this item?');">

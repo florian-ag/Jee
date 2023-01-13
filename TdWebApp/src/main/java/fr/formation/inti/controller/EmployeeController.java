@@ -53,7 +53,7 @@ public class EmployeeController extends HttpServlet {
 
 		List<Employee> list = employeeservice.findAll();
 		request.setAttribute("employee", list);
-		request.getServletContext().getRequestDispatcher("/crud.jsp").forward(request, response);
+		request.getServletContext().getRequestDispatcher("/WEB-INF/view/crud.jsp").forward(request, response);
 	}
 
 }
