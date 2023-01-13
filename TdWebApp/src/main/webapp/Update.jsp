@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; UTF-8"	pageEncoding="UTF-8" session="false"%>
+<%@ page language="java" contentType="text/html; UTF-8"
+	pageEncoding="UTF-8" session="false"%>
 
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -12,31 +13,42 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-	
+
 	<div class="container">
-		
+
 		<h2>Update employee</h2>
 		<form action="update" method="post">
 			<div class="form-group">
-				<label for="userId">Firstname</label> 
-				<input type="text"	class="form-control" name="firstname" id="firstname" placeholder="Firstname" value="${emp.firstName}">
+				<label for="userId">Firstname</label> <input type="text"
+					class="form-control" name="firstname" id="firstname"
+					placeholder="Firstname" value="${emp.firstName}">
 			</div>
 			<div class="form-group">
-				<label for="userId">Lastname</label> 
-				<input type="text"	class="form-control" name="lastname" id="lastname" placeholder="Lastname" value="${emp.lastName}">
+				<label for="userId">Lastname</label> <input type="text"
+					class="form-control" name="lastname" id="lastname"
+					placeholder="Lastname" value="${emp.lastName}">
+			</div>
+
+			<div class="form-group">
+				<label for="userId">Title</label> <input type="text"
+					class="form-control" name="title" id="title" placeholder="Title"
+					value="${emp.title}"> <input type="hidden" name="id"
+					value="${emp.empId}">
 			</div>
 			<div class="form-group">
-				<label for="userId">Start Date</label> 
-				<input type="text"	class="form-control" name="startdate" id="startdate" placeholder="Creation date" value="${emp.startDate}">
+				<label for="userId">Start Date</label> <input type="date"
+					id="startdate" name="startdate" value="${emp.startDate}"
+					min="1900-01-01" max="2100-12-31">
 			</div>
-			<div class="form-group">
-				<label for="userId">Title</label> 
-				<input type="text"	class="form-control" name="title" id="title" placeholder="Title" value="${emp.title}">
-				<input type="hidden" name="id" value="${emp.empId}">
-			</div>
-			
+
 			<button type="submit" class="btn btn-primary">Update</button>
-			
+
+		</form>
+		<br>
+		<form action="employee" method="post">
+
+			<button type="submit" class="btn btn-primary">Cancel</button>
+
 		</form>
 
 

@@ -16,11 +16,11 @@
 			
 			<div class="form-group">
 				<label for="userId">Identifiant</label> 
-				<input type="text"	class="form-control" name="email" id="email" placeholder="Identifiant">
+				<input type="text"	class="form-control" name="email" id="email" placeholder="Identifiant" required>
 			</div>
 			<div class="form-group">
 				<label for="password">Mot de passe</label> 
-				<input type="text"	class="form-control" name="password" id="password" placeholder="Mot de passe">
+				<input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe" required>
 			</div>
 			
 			<button type="submit" class="btn btn-primary">Se connecter</button>

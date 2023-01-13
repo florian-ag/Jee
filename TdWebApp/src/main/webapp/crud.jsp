@@ -56,6 +56,9 @@
 		</div>
 	</nav>
 
+	<h5>Bonjour ${user.firstName} ${user.lastName}
+		${user.getRoleName()}</h5>
+
 	<div class="container">
 		<div class="card-body py-5 px-md-5">
 			<div class="card mx-4 mx-md-5 shadow-5-strong">

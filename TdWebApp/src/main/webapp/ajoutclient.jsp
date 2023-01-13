@@ -27,16 +27,25 @@
 				<input type="text"	class="form-control" name="lastname" id="lastname" placeholder="Lastname">
 			</div>
 			<div class="form-group">
-				<label for="userId">Start Date</label> 
-				<input type="text"	class="form-control" name="startdate" id="startdate" placeholder="Creation date">
-			</div>
-			<div class="form-group">
 				<label for="userId">Title</label> 
 				<input type="text"	class="form-control" name="title" id="title" placeholder="Title">
 			</div>
 			
+			<div class="form-group">
+				<label for="userId">Start Date</label> <input type="date"
+					id="startdate" name="startdate"
+					min="1900-01-01" max="2100-12-31">
+			</div>
+			
 			
 			<button type="submit" class="btn btn-primary">Validate</button>
+		</form>
+		<br>
+		
+		<form action="employee" method="post">
+
+			<button type="submit" class="btn btn-primary">Cancel</button>
+
 		</form>
 
 
