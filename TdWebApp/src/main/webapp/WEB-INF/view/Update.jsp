@@ -32,7 +32,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
 		<a class="navbar-brand" href="login">WEBAPP</a> 
 		<a class="navbar-brand" href="employee">List of employees</a> 
-		<a class="navbar-brand" href="logout">Logout</a>
+		<a class="navbar-brand" href="loggedout">Logout</a>
 	</nav>
 	<br>
 	<br>

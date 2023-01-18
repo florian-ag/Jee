@@ -34,13 +34,14 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			response.sendRedirect(request.getContextPath());
-
-		} else {
-			request.getServletContext().getRequestDispatcher("/WEB-INF/view/crudaccueil.jsp").forward(request, response);
-		}
+//		HttpSession session = request.getSession(false);
+//		if (session == null) {
+//			response.sendRedirect(request.getContextPath());
+//
+//		} else {
+//			request.getServletContext().getRequestDispatcher("/WEB-INF/view/crudaccueil.jsp").forward(request, response);
+//		}
+		doPost(request, response);
 	}
 
 	/**

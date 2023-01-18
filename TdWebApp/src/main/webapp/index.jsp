@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; UTF-8"
-	pageEncoding="UTF-8" session="false"%>
+	pageEncoding="UTF-8" errorPage="error.jsp" session="false"%>
 
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

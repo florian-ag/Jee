@@ -38,18 +38,20 @@ public class EmployeeUpdate extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
+		//HttpSession session = request.getSession(false);
 		String empId = request.getParameter("id");
 		Integer id = Integer.parseInt(empId);
 
-		if (session != null && id != null) {
+		//if (session != null && id != null) {
 			Employee employee = employeeservice.findById(id);
 			request.setAttribute("emp", employee);
 			request.getServletContext().getRequestDispatcher("/WEB-INF/view/Update.jsp").forward(request, response);
-		} else {
-			response.sendRedirect(request.getContextPath());
-		}
-	}
+		} 
+		
+//		else {
+//			response.sendRedirect(request.getContextPath());
+//		}
+	//}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Accueil</title>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <link href="CSS.css" rel="stylesheet" />
@@ -32,11 +32,10 @@
 <body>
 
 
-	<nav class="navbar navbar-light bg-dark">
-		<a class="navbar-brand" href="login">WEBAPP</a> <a
-			class="navbar-brand" href="employee">List of employees</a>
-			<h6>${user.firstName} ${user.lastName} ${user.roleName}</h6> <a
-			class="navbar-brand" href="logout">Logout</a>
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<a class="navbar-brand" href="login">WEBAPP</a> 
+		<a class="navbar-brand" href="employee">List of employees</a> 
+		<a class="navbar-brand" href="loggedout">Logout</a>
 	</nav>
 	
 	<div class="col">

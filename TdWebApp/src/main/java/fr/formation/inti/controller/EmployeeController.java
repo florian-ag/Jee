@@ -35,12 +35,12 @@ public class EmployeeController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession(false);
-		if (session != null) {
+		//HttpSession session = request.getSession(false);
+		//if (session != null) {
 			doPost(request, response);			
-		} else {
-			response.sendRedirect(request.getContextPath());
-		}
+		//} else {
+		//	response.sendRedirect(request.getContextPath());
+		//}
 	}
 
 	/**

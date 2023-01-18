@@ -37,9 +37,11 @@ public class EmployeeDeleteController extends HttpServlet {
 		if (session != null && id != null) {
 			employeeservice.deleteById(Integer.parseInt(id));
 			request.getServletContext().getRequestDispatcher("/employee").forward(request, response);
-		}else {
-			response.sendRedirect(request.getContextPath());
 		}
+		
+//		else {
+//			response.sendRedirect(request.getContextPath());
+//		}
 	}
 
 	/**
